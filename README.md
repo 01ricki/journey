@@ -89,6 +89,7 @@ Journey is a privacy-first portfolio tracker that:
 - [x] **PnL calculation** — Entry price from first wallet transfer
 - [x] **Shelby snapshots** — Immutable portfolio proof storage
 - [x] **History browser** — View past snapshots from Shelby
+- [x] **P&L Chart** — Visual portfolio value tracking over time with all-time high/low
 
 ---
 
@@ -149,15 +150,19 @@ journey/
 │   │   ├── layout.tsx         # Root layout
 │   │   ├── globals.css        # Global styles
 │   │   ├── providers.tsx      # Wallet providers
-│   │   └── history/
-│   │       └── page.tsx      # Snapshot history
+│   │   ├── history/
+│   │   │   └── page.tsx      # Snapshot history + P&L chart
+│   │   └── api/
+│   │       └── snapshots/
+│   │           └── route.ts   # History API endpoint
 │   ├── components/           # React components
 │   ├── lib/
 │   │   ├── solana.ts         # Solana utilities
 │   │   ├── evm.ts            # EVM utilities
 │   │   ├── prices.ts         # Price fetching
 │   │   ├── pnl.ts            # PnL calculations
-│   │   └── shelby.ts         # Shelby integration
+│   │   ├── shelby.ts         # Shelby integration
+│   │   └── history.ts        # Portfolio history tracking
 │   └── types/
 │       └── index.ts          # TypeScript types
 ├── .env.example
